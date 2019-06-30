@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+font-family: 'Roboto';
+src: url('Roboto.eot');
+src: url('Roboto.eot') format('embedded-opentype'),
+     url('Roboto.woff2') format('woff2'),
+     url('Roboto.woff') format('woff'),
+     url('Roboto.ttf') format('truetype'),
+     url('Roboto.svg#Roboto') format('svg');
+   }
+
+/*  THIS CONFLICTS WITH OTHER STYLE SHEET */
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #eee;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container p {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+*/
+
+.container p span.typed-text {
+  text-rendering:optimizeLegibility;
+  font-family: 'roboto';
+  font-weight: 600;
+  color: #5057c8;
+  font-size: 300%;
+  height: 40px; /* don't know wtf this is but it vertically alligned shit*/
+      display: table-cell;
+      vertical-align: middle;
+
+}
+
+.container p span.cursor {
+
+  background-color: #5057c8;
+  margin-left: 0.1rem;
+  width: 3px;
+
+  animation: blink 1s infinite;
+  height: 90px; /* don't know wtf this is but it vertically alligned shit*/
+    display: table-cell;
+    vertical-align: middle;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #5057c8; }
+  49% { background-color: #5057c8; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #5057c8; }
+}
+
+
+/* ----VIDEO STUFF----- */
+
+.demoreel {
+  text-align:center;
+  width:100%;
+}
+/*
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+  left: 14%; /* this fixed centering issue */
+
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+  width:70%;
+	height:70%;
+
+}
+
+/* FADE IN EFFECT */
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+	-webkit-animation: fadeIn .5s ease-in 1 forwards;
+  animation: fadeIn .5s ease-in 1 forwards;
+  opacity: 0;
+  font-size: 70%;
+  font-family: 'roboto';
+  font-weight: 300;
+}
